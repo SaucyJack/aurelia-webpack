@@ -8,6 +8,7 @@ Bluebird.config({ warnings: { wForgottenReturn: false } });
 export function configure(aurelia: Aurelia) {
     aurelia.use
         .standardConfiguration()
+        .plugin(PLATFORM.moduleName('aurelia-validation'))
         .developmentLogging();
     aurelia.start().then(() => aurelia.setRoot(PLATFORM.moduleName('app')));
 }

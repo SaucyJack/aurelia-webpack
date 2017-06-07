@@ -10,17 +10,16 @@ module.exports = {
         filename: 'app-bundle.js'
     },
     resolve: {
-        extensions: ['.ts', '.js']
+        extensions: ['.ts', '.js'],
+        modules: [path.resolve('src'), 'node_modules']
     },
     module: {
-        loaders: [
-            { test: /\.ts?$/, loader: 'ts-loader' }
+        rules: [
+            { test: /\.ts?$/, loader: 'ts-loader' },
+            { test: /\.html?$/, loader: 'html-loader' }
         ]
     },
     plugins: [
         new AureliaPlugin()
-    ],
-    devServer: {
-        contentBase: path.resolve(__dirname, 'dist')
-    }
+    ]
 }
