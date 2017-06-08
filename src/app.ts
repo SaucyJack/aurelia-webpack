@@ -1,7 +1,8 @@
+
 export class App {
-    message: string;
+    private message: string;
 
     constructor() {
-        this.message = "Aurelia loaded";
+        this.message = 'is binding working?';
     }
 }
